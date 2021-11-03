@@ -1,0 +1,87 @@
+1) How would you write a while statement in Go?
+
+Using the 'for' loop. 
+
+counter := 0
+for counter <= 10 {
+    fmt.Printf("Counter: %d\n", counter)
+    counter++
+}
+
+---------------------------------------------------------------
+2) What does the keyword defer do?
+The defer keyword allows to indicate a last instruction to run just before the function where it is
+declared ends. We can declare as many defer instructions as we need and these are executed in a LIFO precedence. 
+
+---------------------------------------------------------------
+3) Does Go support pointers? How do arguments get passed around(by value or by reference)?
+Yes, Go does. Go supports both ways to pass arguments to a function or a method. The difference between them is
+when a variable is passed by reference (using a pointer to the var) the original value of the var will be modified.
+When the variable is passed around by value, a copy of the var is made and then the original value of the var is not 
+modified by the function in which the var is passed around.
+
+---------------------------------------------------------------
+4) Are arrays in Go fixed length? How about slices?
+Yes, the arrays are fixed length. The slices are different as these are dynamically allocated. However is possible to set 
+the initial size and its maximum capacity.
+
+---------------------------------------------------------------
+5) Say you have a map: map[string]int, how would do a lookup and check to see if the map holds the value 
+of the key you were looking for?
+
+myMap := map[string]int {
+    "key1": 0,
+    "key2": 1,
+}
+
+if _, ok := myMap["key1"]; ok {
+    fmt.Println("Value found")
+} else {
+    fmt.Println("Value not found")
+}
+
+---------------------------------------------------------------
+6a) How does Go structure programs? 
+Go organize the programs through the use of packages. This packages are defined as namespaces following project
+folder structure. Since version 1.11 (2018) is possible to write Go packages outside the folder defined by the GOPATH
+environment variable. 
+
+6b) What is the difference between a library and a program that executes?
+For a program to be executed is necessary to define a "main" package containing a "main" function.
+Once the program is built Go defines this main function as an entry point.
+If this main package or entry point is not defined, then a library which is not possible to run is written.
+
+---------------------------------------------------------------
+7) How do you make a function or a type public? And how do you make it private?
+A function or a type can be defined as public writing the first letter of its name in capital. In the same way 
+the fields of a structured type can be defined as public if the first letter is capital.
+
+---------------------------------------------------------------
+8) Attached simplecalc and usecalc
+
+---------------------------------------------------------------
+9) We can use the struct type to simulate the tables and fields. 
+Example:
+
+type myTable struct {
+    field1 int,
+    field2 string,
+}
+
+---------------------------------------------------------------
+10) Using type switching:
+
+func isPrimitive(x interface{}) bool {
+	switch x.(type) {
+	case float64, int, bool, string:
+		return true            
+    default:
+        return false
+    }
+}
+
+11) How are errors defined in Go?
+In Go, errors are one more type. These are defined as an interface with only one method: Error().
+
+---------------------------------------------------------------
+12) 

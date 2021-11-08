@@ -84,4 +84,8 @@ func isPrimitive(x interface{}) bool {
 In Go, errors are one more type. These are defined as an interface with only one method: Error().
 
 ---------------------------------------------------------------
-12) 
+12) What do you use to make two functions concurrent?
+We have to use goroutines
+
+13) How would you synchronize two concurrent functions?
+By using waitgroups from the sync package.
